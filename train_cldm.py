@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     # Configs
     resume_path = model_root + "/control_dresscode_ini.ckpt"
-    batch_size = 4
+    batch_size = 1
     logger_freq = 4600 # val
     learning_rate = 1.0e-05
     sd_locked = True
