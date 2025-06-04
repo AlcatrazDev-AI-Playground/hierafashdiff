@@ -12,7 +12,7 @@ from utils.config import *
 # import debugpy; debugpy.listen(('127.0.0.1', 56789)); debugpy.wait_for_client()
 
 if __name__ == '__main__':
-    os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'  # limit gpu
+    os.environ['CUDA_VISIBLE_DEVICES'] = '1'  # limit gpu
     save_memory = False
 
     disable_verbosity()
