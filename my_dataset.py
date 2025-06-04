@@ -24,7 +24,7 @@ class MyDataset(Dataset):
         prompt = item['caption']
 
         source = cv2.imread(dataset_root + source_filename)
-        target = cv2.imread(dataset_root + target_filename)
+        target = cv2.imread(dataset_root + "/train/" + target_filename)
 
         # Do not forget that OpenCV read images in BGR order.
         source = cv2.cvtColor(source, cv2.COLOR_BGR2RGB)
