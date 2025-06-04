@@ -1,4 +1,5 @@
-import os
+import os, sys
+sys.path[0] = "/kaggle/hierafashdiff"
 import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 from my_dataset import MyDataset
@@ -11,7 +12,7 @@ from utils.config import *
 # import debugpy; debugpy.listen(('127.0.0.1', 56789)); debugpy.wait_for_client()
 
 if __name__ == '__main__':
-    os.environ['CUDA_VISIBLE_DEVICES'] = '1'  # limit gpu
+    os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'  # limit gpu
     save_memory = False
 
     disable_verbosity()
@@ -20,7 +21,7 @@ if __name__ == '__main__':
         enable_sliced_attention()
 
     # Configs
-    resume_path = model_root + "control_dresscode_ini.ckpt"
+    resume_path = model_root + "/control_dresscode_ini.ckpt"
     batch_size = 4
     logger_freq = 4600 # val
     learning_rate = 1.0e-05
@@ -44,7 +45,7 @@ if __name__ == '__main__':
     # ModelCheckpoint 
     checkpoint_callback = ModelCheckpoint(
         monitor=None,  
-        dirpath='./hiera_logs',  # dirpath
+        dirpath=' ../working/train_logs/',  # dirpath
         filename='model_{epoch:02d}-{step:06d}',  # file_name
         save_top_k=-1,  # save all model
         save_last=True,  # save last model

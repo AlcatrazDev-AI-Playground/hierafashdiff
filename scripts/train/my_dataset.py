@@ -1,7 +1,8 @@
+import sys
 import json
 import cv2
 import numpy as np
-
+sys.path[0] = "/kaggle/hierafashdiff"
 from torch.utils.data import Dataset
 from utils.config import *
 

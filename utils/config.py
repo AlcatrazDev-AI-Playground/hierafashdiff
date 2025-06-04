@@ -1,6 +1,6 @@
 import os
 
-model_root = os.path.join(os.path.dirname(__file__), "checkpoints")
+model_root = os.path.join("/kaggle/hierafashdiff", "checkpoints")
 
 dataset_root = "dataset/HieraFashion_5K/"
 
