@@ -8,7 +8,7 @@ from utils.config import *
 
 class MyDataset(Dataset):
     def __init__(self):
-        json_path = dataset_root + "train.json"
+        json_path = dataset_root + "train_pose.json"
         with open(json_path, 'rt') as f:
             res = json.load(f)
             self.data = res
